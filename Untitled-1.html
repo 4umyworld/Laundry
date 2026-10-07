@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAUNDRY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <h1>LAUNDRY</h1>
+            <p class="subtitle">Sistem Informasi Laundry</p>
+
+            <form id="loginForm" class="login-form">
+                <div class="field-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" placeholder="Masukkan Username" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Masukkan Password" required>
+                </div>
+
+                <button type="submit" class="login-btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="appScreen" class="app-screen hidden">
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>LAUNDRY</h1>
+                <p>Sistem Informasi Laundry</p>
+            </div>
+
+            <nav class="menu" aria-label="menu utama">
+                <button class="menu-item" data-page="dashboard">Dashboard</button>
+                <button class="menu-item active" data-page="pelanggan">Pelanggan</button>
+                <button class="menu-item" data-page="layanan">Layanan</button>
+                <button class="menu-item" data-page="transaksi">Transaksi</button>
+                <button class="menu-item" data-page="status">Status laundry</button>
+            </nav>
+
+            <button id="logoutBtn" class="logout">LOG OUT</button>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <div class="page-header">
+                    <h2 id="pageTitle">Data Pelanggan</h2>
+                    <p id="pageSubtitle">Kelola data pelanggan laundry</p>
+                </div>
+
+                <button class="add-btn" aria-label="Tambah item">+</button>
+            </div>
+
+            <section class="content-panel active" data-page="pelanggan">
+                <div class="table-panel">
+                    <table class="customer-table">
+                        <thead>
+                            <tr>
+                                <th>ID Pelanggan</th>
+                                <th>Nama</th>
+                                <th>No. HP</th>
+                                <th>Alamat</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PL001</td>
+                                <td>Aisyah</td>
+                                <td>081234567890</td>
+                                <td>Bengkalis</td>
+                                <td><button class="delete-btn">Hapus</button></td>
+                            </tr>
+                            <tr>
+                                <td>PL002</td>
+                                <td>Budi</td>
+                                <td>082345678901</td>
+                                <td>Bengkalis</td>
+                                <td><button class="delete-btn">Hapus</button></td>
+                            </tr>
+                            <tr>
+                                <td>PL003</td>
+                                <td>Citra</td>
+                                <td>083456789012</td>
+                                <td>Bengkalis</td>
+                                <td><button class="delete-btn">Hapus</button></td>
+                            </tr>
+                            <tr>
+                                <td>PL004</td>
+                                <td>Dinda</td>
+                                <td>084567890123</td>
+                                <td>Bengkalis</td>
+                                <td><button class="delete-btn">Hapus</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-panel" data-page="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total<br>Pelanggan</h3>
+                        <div class="number">120</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total<br>Transaksi</h3>
+                        <div class="number">50</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Sedang<br>Diproses</h3>
+                        <div class="number">20</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Selesai</h3>
+                        <div class="number">15</div>
+                    </div>
+                </div>
+
+                <div class="transaction-box">
+                    <h2>Transaksi terbaru</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Transaksi</th>
+                                <th>Pelanggan</th>
+                                <th>Layanan</th>
+                                <th>Berat(kg)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TR001</td>
+                                <td>Aisyah</td>
+                                <td>Cuci Setrika</td>
+                                <td>3</td>
+                                <td>Diproses</td>
+                            </tr>
+                            <tr>
+                                <td>TR002</td>
+                                <td>Budi</td>
+                                <td>Cuci Kering</td>
+                                <td>5</td>
+                                <td>Selesai</td>
+                            </tr>
+                            <tr>
+                                <td>TR003</td>
+                                <td>Citra</td>
+                                <td>Setrika</td>
+                                <td>3</td>
+                                <td>Diproses</td>
+                            </tr>
+                            <tr>
+                                <td>TR004</td>
+                                <td>Dinda</td>
+                                <td>Cuci Setrika</td>
+                                <td>4</td>
+                                <td>Diambil</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-panel" data-page="layanan">
+                <div class="simple-panel">
+                    <h3>Daftar Layanan</h3>
+                    <ul>
+                        <li>Cuci Kering - Rp 15.000/kg</li>
+                        <li>Cuci Setrika - Rp 18.000/kg</li>
+                        <li>Setrika - Rp 7.000/kg</li>
+                        <li>Dry Clean - Rp 25.000/kg</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-panel" data-page="transaksi">
+                <div class="simple-panel">
+                    <h3>Transaksi</h3>
+                    <table class="mini-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Pelanggan</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>TX001</td><td>Aisyah</td><td>Rp 54.000</td><td>Diproses</td></tr>
+                            <tr><td>TX002</td><td>Budi</td><td>Rp 75.000</td><td>Selesai</td></tr>
+                            <tr><td>TX003</td><td>Citra</td><td>Rp 36.000</td><td>Diproses</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-panel" data-page="status">
+                <div class="simple-panel">
+                    <h3>Status Laundry</h3>
+                    <ul class="status-list">
+                        <li><span class="dot waiting"></span> Menunggu</li>
+                        <li><span class="dot process"></span> Diproses</li>
+                        <li><span class="dot done"></span> Selesai</li>
+                        <li><span class="dot take"></span> Diambil</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const loginScreen = document.getElementById('loginScreen');
+        const appScreen = document.getElementById('appScreen');
+        const loginForm = document.getElementById('loginForm');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const panels = document.querySelectorAll('.content-panel');
+        const pageTitle = document.getElementById('pageTitle');
+        const pageSubtitle = document.getElementById('pageSubtitle');
+
+        const pageMap = {
+            dashboard: { title: 'Dashboard', subtitle: 'Selamat datang di Sistem Informasi Laundry' },
+            pelanggan: { title: 'Data Pelanggan', subtitle: 'Kelola data pelanggan laundry' },
+            layanan: { title: 'Layanan', subtitle: 'Kelola layanan laundry' },
+            transaksi: { title: 'Transaksi', subtitle: 'Aktivitas transaksi laundry' },
+            status: { title: 'Status Laundry', subtitle: 'Pantau status proses laundry' }
+        };
+
+        function setPage(page) {
+            menuItems.forEach(item => item.classList.toggle('active', item.dataset.page === page));
+            panels.forEach(panel => panel.classList.toggle('active', panel.dataset.page === page));
+
+            if (pageMap[page]) {
+                pageTitle.textContent = pageMap[page].title;
+                pageSubtitle.textContent = pageMap[page].subtitle;
+            }
+        }
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (username === 'admin' && password === '1234') {
+                loginScreen.classList.add('hidden');
+                appScreen.classList.remove('hidden');
+                setPage('pelanggan');
+            } else {
+                alert('Username atau password salah!\nCoba: admin / 1234');
+            }
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function () {
+                setPage(this.dataset.page);
+            });
+        });
+
+        logoutBtn.addEventListener('click', function () {
+            appScreen.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+            loginForm.reset();
+        });
+    </script>
+</body>
+</html>
